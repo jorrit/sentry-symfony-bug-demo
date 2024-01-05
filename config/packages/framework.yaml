@@ -17,6 +17,18 @@ framework:
     php_errors:
         log: true
 
+    http_client:
+        scoped_clients:
+            example.client:
+                base_uri: 'https://example.com/'
+                verify_host: false # TODO: make true
+                verify_peer: false # TODO: make true
+                timeout: 10
+            api.client:
+                base_uri: 'https://api.com/'
+                verify_host: false
+                verify_peer: false
+
 when@test:
     framework:
         test: true
